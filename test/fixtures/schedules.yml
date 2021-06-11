@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pickup_date: 2021-06-11 23:37:19
+  delivery_date: 2021-06-11 23:37:19
+  allowed_time: MyString
+  cy: MyString
+  warehouse: MyString
+  bill_number: MyString
+  container: MyString
+  size: 1
+  axis: MyString
+  transporter: MyString
+  division: MyString
+  customer: MyString
+  reference_number: MyString
+  trade_type: MyString
+
+two:
+  pickup_date: 2021-06-11 23:37:19
+  delivery_date: 2021-06-11 23:37:19
+  allowed_time: MyString
+  cy: MyString
+  warehouse: MyString
+  bill_number: MyString
+  container: MyString
+  size: 1
+  axis: MyString
+  transporter: MyString
+  division: MyString
+  customer: MyString
+  reference_number: MyString
+  trade_type: MyString
