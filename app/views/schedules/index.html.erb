@@ -1,0 +1,43 @@
+<% if user_signed_in? %>
+  <h1>ドレースケジュール一覧</h1>
+  <table class="table">
+    <tr>
+      <th>搬出日</th>
+      <th>納品日</th>
+      <th>納品時間</th>
+      <th>CY</th>
+      <th>倉庫名</th>
+      <th>B/L NO.</th>
+      <th>コンテナNO.</th>
+      <th>サイズ</th>
+      <th>軸数</th>
+      <th>コンテナタイプ</th>
+      <th>運送会社</th>
+      <th>扱い部署</th>
+      <th>荷主</th>
+      <th>荷捌番号</th>
+      <th>輸出入</th>
+    </tr>
+    <tr>
+      <% @schedules.each do |s| %>
+        <td><%= s.pickup_date %></td>
+        <td><%= s.delivery_date %></td>
+        <td><%= s.allowed_time %></td>
+        <td><%= s.cy %></td>
+        <td><%= s.warehouse %></td>
+        <td><%= s.bill_number %></td>
+        <td><%= s.container %></td>
+        <td><%= s.size %></td>
+        <td><%= s.axis %></td>
+        <td></td>
+        <td><%= s.transporter %></td>
+        <td><%= s.division %></td>
+        <td><%= s.customer %></td>
+        <td><%= s.reference_number %></td>
+        <td><%= s.trade_type %></td>
+      <% end %>
+    </tr>
+  </table>
+<% else %>
+  <p>ログインしてください</p>
+<% end %>
