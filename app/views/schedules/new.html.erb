@@ -1,6 +1,6 @@
 <h1>スケジュール登録</h1>
 <%= form_with model: @schedule, local: true do |f| %>
-  <table class="table">
+  <table class="table table-dark">
     <tr>
       <th><%= f.label :pickup_date, "搬出日*" %></th>
       <td><%= f.text_field :pickup_date %></td>
@@ -44,5 +44,6 @@
       <td><%= f.text_field :customer %></td>
     </tr>
   </table>
+  <p>* は必須入力！</p>
   <%= f.submit "登録" %>
 <% end %>

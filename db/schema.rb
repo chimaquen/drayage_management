@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_143719) do
+ActiveRecord::Schema.define(version: 2021_06_12_083654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "schedules", force: :cascade do |t|
-    t.datetime "pickup_date"
-    t.datetime "delivery_date"
+    t.date "pickup_date"
+    t.date "delivery_date"
     t.string "allowed_time"
     t.string "cy"
     t.string "warehouse"

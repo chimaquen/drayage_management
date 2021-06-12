@@ -16,6 +16,10 @@
 
  @import "bootstrap/scss/bootstrap";
 
+ $fa-font-path: '@fortawesome/fontawesome-free/webfronts';
+ @import "@fortawesome/fontawesome-free/scss/fontawesome";
+ @import "@fortawesome/fontawesome-free/scss/regular";
+
  body{
   //  background-image: url('rayia-soderberg-ezSFnAFi9hY-unsplash.jpg');
    padding-top: 100px;
@@ -25,5 +29,5 @@
   }
  
   .container {
-    width: 80%;
+    width: 90%;
    }
