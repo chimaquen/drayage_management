@@ -1,2 +1,48 @@
-<h1>Schedules#new</h1>
-<p>Find me in app/views/schedules/new.html.erb</p>
+<h1>スケジュール登録</h1>
+<%= form_with model: @schedule, local: true do |f| %>
+  <table class="table">
+    <tr>
+      <th><%= f.label :pickup_date, "搬出日*" %></th>
+      <td><%= f.text_field :pickup_date %></td>
+      <th><%= f.label :delivery_date, "納品日*" %></th>
+      <td><%= f.text_field :delivery_date %></td>
+      <th><%= f.label :allowed_time, "納品時間" %></th>
+      <td><%= f.text_field :allowed_time %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :cy, "CY*" %></th>
+      <td><%= f.text_field :cy %></td>
+      <th><%= f.label :warehouse, "倉庫名*" %></th>
+      <td><%= f.text_field :warehouse %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :bill_number, "B/L NO.*" %></th>
+      <td><%= f.text_field :bill_number %></td>
+      <th><%= f.label :container, "VAN NO.*" %></th>
+      <td><%= f.text_field :container %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :size, "サイズ*" %></th>
+      <td><%= f.select :size, [["20", "20"], ["40", "40"]], include_blank: "選択してください" %></td>
+      <th><%= f.label :axis, "軸数*" %></th>
+      <td><%= f.select :axis, [["2軸", "2軸"], ["3軸", "3軸"]], include_blank: "選択してください" %></td>
+      <th><%= f.label :type, "タイプ*" %></th>
+      <td><%= f.select :type, [["DRY", "DRY"], ["REEFER", "REEFER"],["OPEN TOP", "OPEN TOP"],["FLAT RACK", "FLAT RACK"],["TANK", "TANK"]], include_blank: "選択してください" %></td>
+      </tr>
+      <tr>
+      <th><%= f.label :transporter, "運送会社" %></th>
+      <td><%= f.text_field :transporter %></td>
+      <th><%= f.label :trade_type, "輸出入" %></th>
+      <td><%= f.select :trade_type, [["輸出", "輸出"], ["輸入", "輸入"]], include_blank: "選択してください" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :reference_number, "管理番号" %></th>
+      <td><%= f.text_field :reference_number %></td>
+      <th><%= f.label :division, "扱い部署名" %></th>
+      <td><%= f.text_field :division %></td>
+      <th><%= f.label :customer, "荷主名" %></th>
+      <td><%= f.text_field :customer %></td>
+    </tr>
+  </table>
+  <%= f.submit "登録" %>
+<% end %>

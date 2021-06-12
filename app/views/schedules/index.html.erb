@@ -18,8 +18,9 @@
       <th>荷捌番号</th>
       <th>輸出入</th>
     </tr>
-    <tr>
-      <% @schedules.each do |s| %>
+    
+    <% @schedules.each do |s| %>
+      <tr>
         <td><%= s.pickup_date %></td>
         <td><%= s.delivery_date %></td>
         <td><%= s.allowed_time %></td>
@@ -35,8 +36,8 @@
         <td><%= s.customer %></td>
         <td><%= s.reference_number %></td>
         <td><%= s.trade_type %></td>
-      <% end %>
-    </tr>
+      </tr>
+    <% end %>
   </table>
 <% else %>
   <p>ログインしてください</p>

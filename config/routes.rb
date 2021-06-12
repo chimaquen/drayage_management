@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root to: 'schedules#index'
-  get 'schedules/index'
-  get 'schedules/new'
-  get 'schedules/create'
+  get '/schedules/new', to: "schedules#new"
+  post '/schedules', to: "schedules#create"
   devise_for :users, controllers: {
       sessions:      'users/sessions',
       passwords:     'users/passwords',
