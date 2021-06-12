@@ -1,0 +1,49 @@
+<% if user_signed_in? %>
+  <h1>スケジュール詳細</h1>
+  <table class="table table-dark">
+    <tr>
+      <th>搬出日</th>
+      <td><%= @schedule.pickup_date %></td>
+      <th>CY</th>
+      <td><%= @schedule.cy %></td>
+    </tr>
+    <tr>
+      <th>納品日・時間</th>
+      <td><%= @schedule.delivery_date %> <%= @schedule.allowed_time %></td>
+      <th>倉庫名</th>
+      <td><%= @schedule.warehouse %></td>
+    </tr>
+    <tr>
+      <th>B/L NO.</th>
+      <td><%= @schedule.bill_number %></td>
+    </tr>
+    <tr>
+      <th>コンテナNO.</th>
+      <td><%= @schedule.container %></td>
+      <th>
+        <p>サイズ</p>
+        <p>軸数</p>
+        <p>コンテナタイプ</p>
+      </th>
+      <td>
+        <p><%= @schedule.size %></p>
+        <p><%= @schedule.axis %></p>
+        <p>DRY</p>
+      </td>
+    </tr>
+    <tr>
+      <th>運送会社</th>
+      <td><%= @schedule.transporter %></td>
+    </tr>
+    <tr>
+      <th>荷主</th>
+      <td><%= @schedule.customer %></td>
+    </tr>
+    <tr>
+      <th>管理番号</th>
+      <td><%= @schedule.reference_number %></td>
+    </tr>
+  </table>
+<% else %>
+  <p>ログインしてください</p>
+<% end %>
