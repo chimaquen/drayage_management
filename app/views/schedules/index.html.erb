@@ -1,46 +1,34 @@
 <% if user_signed_in? %>
-  <h1>ドレースケジュール一覧</h1>
-  <table class="table table-dark">
-    <tr>
-      <th>搬出日</th>
-      <th>
-        <p>CY</p>
-        <p>倉庫名</p>
-      </th>
-      <th>B/L NO.</th>
-      <th>
-        <p>コンテナNO.</p>
-        <p>サイズ - タイプ</p>
-      </th>
-      <th>運送会社</th>
-      <th>荷主</th>
-      <th>管理番号</th>
-      <th>操作</th>
-    </tr>
-    
-    <% @schedules.each do |s| %>
-      <tr>
-        <td><%= s.pickup_date %></td>
-        <td>
-          <p><%= s.cy %></p>
-          <p><%= s.warehouse %></p>
-        </td>
-        <td><%= s.bill_number %></td>
-        <td>
-          <p><%= s.container %></p>
-          <p><%= s.size %> - DRY</p>
-        </td>
-        <td><%= s.transporter %></td>
-        <td><%= s.customer %></td>
-        <td><%= s.reference_number %></td>
-        <td>
-          <p><%= link_to '詳細', "/schedules/#{s.id}" %></p>        
-          <p><%= link_to '編集', "/schedules/#{s.id}/edit", method: :get  %></p>
-          <p><%= link_to '削除', "/schedules/#{s.id}", method: :delete, data: {confirm: "削除しますか？"} %></p>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+  <h1>Container Schedule List</h1>
+
+  <% @schedules.each do |s| %>
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <h3 class="card-title"><%= s.container %></h3>
+        </div>
+        <div>
+          <span><%= s.pickup_date %></span> PICK  
+          <span><%= s.cy %></span> → 
+          <span><%= s.warehouse %></span> 
+          <%= s.transporter %>
+        </div>
+        <div>
+          <span><%= s.reference_number %></span>
+          <%= s.customer %>
+          <span></span>
+        </div>
+        <div>
+          <ul class="list-unstyled">
+            <li><%= link_to '詳細', "/schedules/#{s.id}", class:"btn btn-success" %></li>
+            <li><%= link_to '編集', "/schedules/#{s.id}/edit", method: :get, class:"btn btn-success"  %></li>
+            <li><%= link_to '削除', "/schedules/#{s.id}", method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-success" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  
 <% else %>
   <p>ログインしてください</p>
 <% end %>

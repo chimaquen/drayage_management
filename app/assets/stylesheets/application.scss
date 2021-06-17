@@ -28,6 +28,28 @@
    
   }
  
+  .badge {
+    font-size: 30px;
+  }
+
   .container {
     // width: 90%;
+    padding: 10px;
+    background-color: #eeeeee;
+    h1 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .card {
+      text-align: left;
+      span {
+        font-weight: bold;
+        color: lightseagreen;
+      }
+    }
+    table {
+      line-height: 1em;
+      td {
+        
+      }
+    }
    }

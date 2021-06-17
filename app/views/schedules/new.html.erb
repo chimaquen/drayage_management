@@ -30,17 +30,17 @@
       <td><%= f.select :type, [["DRY", "DRY"], ["REEFER", "REEFER"],["OPEN TOP", "OPEN TOP"],["FLAT RACK", "FLAT RACK"],["TANK", "TANK"]], include_blank: "選択してください" %></td>
       </tr>
       <tr>
-      <th><%= f.label :transporter, "運送会社" %></th>
+      <th><%= f.label :transporter, "運送会社*" %></th>
       <td><%= f.text_field :transporter %></td>
       <th><%= f.label :trade_type, "輸出入" %></th>
       <td><%= f.select :trade_type, [["輸出", "輸出"], ["輸入", "輸入"]], include_blank: "選択してください" %></td>
     </tr>
     <tr>
-      <th><%= f.label :reference_number, "管理番号" %></th>
+      <th><%= f.label :reference_number, "管理番号*" %></th>
       <td><%= f.text_field :reference_number %></td>
       <th><%= f.label :division, "扱い部署名" %></th>
       <td><%= f.text_field :division %></td>
-      <th><%= f.label :customer, "荷主名" %></th>
+      <th><%= f.label :customer, "荷主名*" %></th>
       <td><%= f.text_field :customer %></td>
     </tr>
   </table>
