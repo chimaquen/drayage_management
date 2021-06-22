@@ -26,8 +26,8 @@
       <td><%= f.select :size, [["20", "20"], ["40", "40"]], include_blank: "選択してください" %></td>
       <th><%= f.label :axis, "軸数*" %></th>
       <td><%= f.select :axis, [["2軸", "2軸"], ["3軸", "3軸"]], include_blank: "選択してください" %></td>
-      <th><%= f.label :type, "タイプ*" %></th>
-      <td><%= f.select :type, [["DRY", "DRY"], ["REEFER", "REEFER"],["OPEN TOP", "OPEN TOP"],["FLAT RACK", "FLAT RACK"],["TANK", "TANK"]], include_blank: "選択してください" %></td>
+      <th><%= f.label :container_type, "タイプ*" %></th>
+      <td><%= f.select :container_type, [["DRY", "DRY"], ["REEFER", "REEFER"],["OPEN TOP", "OPEN TOP"],["FLAT RACK", "FLAT RACK"],["TANK", "TANK"]], include_blank: "選択してください" %></td>
       </tr>
       <tr>
       <th><%= f.label :transporter, "運送会社" %></th>
@@ -40,8 +40,12 @@
       <td><%= f.text_field :reference_number %></td>
       <th><%= f.label :division, "扱い部署名" %></th>
       <td><%= f.text_field :division %></td>
-      <th><%= f.label :customer, "荷主名" %></th>
+    </tr>
+    <tr>
+      <th><%= f.label :customer, "荷主名*" %></th>
       <td><%= f.text_field :customer %></td>
+      <th><%= f.label :customer_reference, "荷主REF NO." %></th>
+      <td><%= f.text_field :customer_reference %></td>
     </tr>
   </table>
   <p>* は必須入力！</p>

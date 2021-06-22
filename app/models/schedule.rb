@@ -8,7 +8,7 @@ class Schedule < ApplicationRecord
   validates :bill_number, presence: true
   validates :container, presence: true
   validates :size, presence: true
-  validates :type, presence: true
+  validates :container_type, presence: true
   validates :transporter, presence: true
   validates :customer, presence: true
   validates :reference_number, presence: true
